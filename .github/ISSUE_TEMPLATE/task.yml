@@ -1,96 +1,36 @@
-name: "📌 Task"
-description: Create a new task with user story, flow, and acceptance criteria.
-title: "[Ticket #] - [Task Title]"
+name: "Task"
+description: Create a task or action item
+title: "[TASK]: "
 labels: ["task"]
-projects: ["tentative12345/3"]
-assignees: []
+
 body:
-  - type: input
-    id: ticket-number
+  - type: markdown
     attributes:
-      label: Ticket #
-      description: "Format: Sprint#-Epic#-Module# - Module Name"
-      placeholder: "01-01-01 - Login"
-    validations:
-      required: true
-
-  - type: input
-    id: epic
-    attributes:
-      label: Epic
-      placeholder: "01 - User Authentication"
-    validations:
-      required: true
-
-  - type: textarea
-    id: user-story
-    attributes:
-      label: User Story
-      description: "As a [type of user], I want to [do something], so that [reason/benefit]."
-      placeholder: "As a registered user, I want to log in with my email and password, so that I can access my dashboard securely."
-    validations:
-      required: true
-
-  - type: input
-    id: figma-reference
-    attributes:
-      label: Reference (Figma)
-      placeholder: "Insert Figma link here"
-    validations:
-      required: false
+      value: |
+        Thanks for creating a task!
 
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: What needs to be done
+      label: Task Description
+      description: What needs to be done?
+      placeholder: Describe the task or action item clearly and concisely.
     validations:
       required: true
 
   - type: textarea
-    id: flow
-    attributes:
-      label: Flow
-      description: Step-by-step flow of the feature
-      placeholder: |
-        1.
-        2.
-        3.
-    validations:
-      required: false
-
-  - type: textarea
-    id: validation
-    attributes:
-      label: Validation
-      description: Field/input validation rules
-    validations:
-      required: false
-
-  - type: textarea
-    id: display-behavior
-    attributes:
-      label: Display Behavior
-      description: How the UI should behave (loading states, error messages, etc.)
-    validations:
-      required: false
-
-  - type: textarea
-    id: edge-cases
-    attributes:
-      label: Edge Cases
-      description: Unusual or boundary scenarios to consider
-    validations:
-      required: false
-
-  - type: textarea
-    id: acceptance-criteria
+    id: acceptance
     attributes:
       label: Acceptance Criteria
-      description: Checklist of conditions that must be met for this task to be considered done
-      value: |
-        - [ ] Criteria 1
-        - [ ] Criteria 2
-        - [ ] Criteria 3
-    validations:
-      required: true  
+      description: How will we know this task is complete?
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other relevant information, links, or dependencies.
+      placeholder: Feel free to add any context, resources, or related issues that might help with this task.
