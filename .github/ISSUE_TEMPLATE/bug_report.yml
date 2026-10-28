@@ -1,102 +1,46 @@
-name: "Bug Report"
-description: Report a bug or defect in an existing feature.
-title: "[Ticket #] - [Bug] - [Short Bug Summary]"
+name: Bug Report
+description: File a bug report
+title: "[BUG]: "
 labels: ["bug"]
-projects: ["tentative12345/3"]
-assignees: []
+
 body:
-  - type: dropdown
-    id: priority
+  - type: markdown
     attributes:
-      label: Priority / Severity
-      description: How severe is the impact of this bug?
-      options:
-        - Critical
-        - High
-        - Medium
-        - Low
-    validations:
-      required: true
-
-  - type: input
-    id: related-ticket
-    attributes:
-      label: Related Ticket #
-      description: "The task ticket this module was built under. Format: Sprint#-Epic#-Module# - Module Name"
-      placeholder: "03-02-01 - Live Selling"
-    validations:
-      required: true
-
-  - type: input
-    id: epic
-    attributes:
-      label: Epic
-      placeholder: "02 - Live Selling & Streaming"
-    validations:
-      required: true
-
-  - type: input
-    id: summary
-    attributes:
-      label: Summary
-      description: One-line summary of the bug
-      placeholder: "Livestream remains stuck on loading while audio continues to play"
-    validations:
-      required: true
-
-  - type: textarea
-    id: description
-    attributes:
-      label: Description
-      description: Detailed explanation of the bug
-    validations:
-      required: true
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to Reproduce
       value: |
-        1.
-        2.
-        3.
+        Thanks for taking the time to fill out this bug report!
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Report hasn't been filed before.
+      options:
+        - label: I have verified that the bug I'm about to report hasn't been filed before.
+          required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Bug Overview
+      description: A clear and concise overview of the bug.
+      placeholder: When I do "X", "Y" happens instead of "Z".
     validations:
       required: true
 
   - type: textarea
-    id: expected-result
+    id: steps
     attributes:
-      label: Expected Result
-      description: What should happen
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual-result
-    attributes:
-      label: Actual Result
-      description: What actually happens
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      description: Platform, browser/device, OS, app version, etc.
+      label: Steps to Reproduce the Bug
+      description: How can we reproduce this?
       placeholder: |
-        Platform: Web App
-        Browser/Device:
-        OS:
-        App Version:
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
     validations:
-      required: false
+      required: true
 
   - type: textarea
-    id: screenshots
+    id: context
     attributes:
-      label: Screenshots / Video / Logs
-      description: Attach any visual evidence, console logs, or network traces
-    validations:
-      required: false
-
+      label: Additional Context
+      description: Add any other context about the problem here.
+      placeholder: Feel free to add any other context/information/screenshots/etc... that you think might be relevant to this issue in here.
